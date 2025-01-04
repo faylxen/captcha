@@ -40,11 +40,8 @@ def find_and_click_text(image_path, target_text):
             cv2.polylines(image, [bbox], isClosed=True, color=(0, 255, 0), thickness=2)
             
             # Move mouse and click
-            pyautogui.moveTo(center_x, center_y, duration=0.5)
-            time.sleep(3)
-            pyautogui.click()
-
             
+
             print(f"Clicked on text: {text}")
             text_clicked = True
             
@@ -62,6 +59,7 @@ def find_and_click_text(image_path, target_text):
         print(f"No text containing '{target_text}' was found.")
     
     print(f"Execution time: {execution_time:.4f} seconds")
+    return center_x,center_y
 
 # Usage
 if __name__ == "__main__":
